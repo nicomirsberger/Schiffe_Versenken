@@ -34,7 +34,7 @@ class BoardView:
     # ------------------------------------------------------------------ drawing
     def draw_grid(self, surface: pygame.Surface, fonts: dict[str, pygame.font.Font]) -> None:
         title = fonts["heading"].render(self.title, True, theme.TEXT)
-        surface.blit(title, (self.origin[0], self.origin[1] - 62))
+        surface.blit(title, (self.origin[0], self.origin[1] - 56))
         for i in range(self.size):
             letter = fonts["small"].render(chr(65 + i), True, theme.TEXT_DIM)
             cx = self.origin[0] + i * theme.CELL + theme.CELL // 2
@@ -111,6 +111,15 @@ class BoardView:
                 rect = self.cell_rect((row, col)).move(-self.origin[0], -self.origin[1])
                 pygame.draw.rect(layer, (*color, int(60 + 150 * value)), rect)
         surface.blit(layer, self.origin)
+
+    def draw_flash(self, surface: pygame.Surface, cell: Coord, progress: float, color) -> None:
+        """Expanding ring that marks a fresh shot (``progress`` from 0 to 1)."""
+        rect = self.cell_rect(cell)
+        radius = int(theme.CELL * (0.3 + 0.7 * progress))
+        alpha = int(255 * (1 - progress))
+        layer = pygame.Surface((radius * 2 + 4, radius * 2 + 4), pygame.SRCALPHA)
+        pygame.draw.circle(layer, (*color, alpha), (radius + 2, radius + 2), radius, width=3)
+        surface.blit(layer, layer.get_rect(center=rect.center))
 
     def draw_preview(self, surface: pygame.Surface, cells: tuple[Coord, ...], valid: bool) -> None:
         color = theme.VALID if valid else theme.INVALID

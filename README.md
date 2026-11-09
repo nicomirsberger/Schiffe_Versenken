@@ -13,7 +13,9 @@ step by step.
 ![Battle screen with the AI's probability map](docs/screenshots/3_battle_heatmap.png)
 
 *Left: your fleet. The red overlay (key `H`) shows where the AI currently
-expects your ships. Right: the enemy waters you are shooting at.*
+expects your ships. Right: the enemy waters you are shooting at. Above each
+board is the nation's battleship, which catches fire as its fleet is sunk.
+Below each board, the last three shots of each side are listed.*
 
 ---
 
@@ -37,10 +39,15 @@ expects your ships. Right: the enemy waters you are shooting at.*
   ships must not touch, a hit earns another shot. All rules are configurable
   in [`battleship/config.py`](battleship/config.py).
 - Four difficulty levels from a random shooter to the neural network with search
+- Five nations to choose from (Germany, USA, Japan, United Kingdom, France). Each has
+  a drawn battleship silhouette (Bismarck, Iowa, Yamato, King George V and Richelieu class)
+  with its national flag. The ships show smoke and fire as their fleet is sunk and
+  sink when the game is lost.
+- Separate shot logs for you and the AI that show the last three shots of each side
 - **Explainable AI view:** press `H` to see the AI's probability map
 - A reproducible machine learning pipeline (data generation → analysis → training → evaluation)
 - Modular architecture: game rules, AI, data, training and UI are separate packages
-- 52 automated tests, linting and continuous integration via GitHub Actions
+- 59 automated tests, linting and continuous integration via GitHub Actions
 
 ## Quick start
 
@@ -62,7 +69,7 @@ game runs immediately without training.
 
 | Screen | Controls |
 |---|---|
-| Menu | Click a difficulty or press `1`–`4` |
+| Menu | Choose your nation and the opponent's nation (a nation cannot fight itself), then click a difficulty or press `1`–`4` |
 | Fleet setup | Left click: place ship · `R` / right click: rotate · `Space`: random fleet · `Backspace`: undo · `Enter`: start |
 | Battle | Click a cell in *Enemy waters* to fire · `H`: show what the AI thinks · `Esc`: back to menu |
 
@@ -177,7 +184,7 @@ Schiffe_Versenken/
 │   │   └── factory.py       #   difficulty levels
 │   ├── data/                # data generation and feature engineering
 │   ├── training/            # training, metrics, evaluation, analysis
-│   └── ui/                  # pygame interface
+│   └── ui/                  # pygame interface, nations, ship illustrations
 ├── models/                  # trained model
 ├── reports/                 # metrics (JSON/Markdown) and figures
 ├── docs/                    # CRISP-DM and architecture documentation, screenshots
@@ -219,7 +226,7 @@ takes about 15 minutes on a laptop, and training takes less than a minute.
 
 ```bash
 pip install -r requirements-dev.txt
-pytest                 # 52 tests (rules, agents, data pipeline, UI smoke test)
+pytest                 # 59 tests (rules, agents, data pipeline, UI smoke test)
 ruff check .           # linting
 ruff format .          # formatting
 ```
