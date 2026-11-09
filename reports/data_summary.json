@@ -1,0 +1,22 @@
+{
+  "games": 12000,
+  "samples": 201846,
+  "features": 605,
+  "labels_per_sample": 100,
+  "games_per_behaviour": {
+    "density": 3232,
+    "hunt_target": 3182,
+    "neural_search": 2040,
+    "neural": 1960,
+    "random": 1586
+  },
+  "mean_shots_per_behaviour": {
+    "density": 47.96,
+    "hunt_target": 51.93,
+    "neural": 51.44,
+    "neural_search": 47.96,
+    "random": 97.9
+  },
+  "share_ship_cells_among_unknown": 0.2336076728185268,
+  "share_samples_with_open_hit": 0.7072223378219038
+}

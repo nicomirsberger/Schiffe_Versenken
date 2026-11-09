@@ -1,0 +1,70 @@
+{
+  "offline": {
+    "prior": {
+      "roc_auc": 0.5562,
+      "log_loss": 0.5522,
+      "brier": 0.1826,
+      "next_shot_hit_rate": 0.2687
+    },
+    "density (search)": {
+      "roc_auc": 0.7473,
+      "log_loss": 0.8991,
+      "brier": 0.1864,
+      "next_shot_hit_rate": 0.6123
+    },
+    "neural": {
+      "roc_auc": 0.7894,
+      "log_loss": 0.4245,
+      "brier": 0.1467,
+      "next_shot_hit_rate": 0.6707
+    },
+    "neural + search": {
+      "roc_auc": 0.755,
+      "log_loss": 0.9585,
+      "brier": 0.1896,
+      "next_shot_hit_rate": 0.6396
+    }
+  },
+  "games": {
+    "neural_search": {
+      "mean": 47.78,
+      "std": 3.45,
+      "min": 38.0,
+      "median": 48.0,
+      "max": 58.0
+    },
+    "density": {
+      "mean": 47.82,
+      "std": 3.61,
+      "min": 37.0,
+      "median": 48.0,
+      "max": 59.0
+    },
+    "neural": {
+      "mean": 50.2,
+      "std": 3.79,
+      "min": 40.0,
+      "median": 50.0,
+      "max": 61.0
+    },
+    "hunt_target": {
+      "mean": 51.57,
+      "std": 4.33,
+      "min": 42.0,
+      "median": 51.0,
+      "max": 65.0
+    },
+    "random": {
+      "mean": 97.68,
+      "std": 2.63,
+      "min": 86.0,
+      "median": 98.5,
+      "max": 100.0
+    }
+  },
+  "head_to_head": {
+    "neural_search better": 0.45666666666666667,
+    "draw": 0.06666666666666667,
+    "density better": 0.4766666666666667
+  }
+}

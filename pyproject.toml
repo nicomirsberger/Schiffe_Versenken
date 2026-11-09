@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "battleship-ai"
+version = "1.0.0"
+description = "Battleship (Schiffe versenken) against a data-driven AI opponent, developed along CRISP-DM."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Nico Mirsberger" }]
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.0",
+    "scikit-learn>=1.4",
+    "joblib>=1.3",
+    "matplotlib>=3.8",
+    "pygame>=2.5",
+    "tabulate>=0.9",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[project.scripts]
+battleship = "battleship.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["battleship*"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+ignore = ["N803", "N806"]
+
+[tool.ruff.lint.per-file-ignores]
+"battleship/training/*.py" = ["E402"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,84 @@
+{
+  "samples": {
+    "train": 141440,
+    "validation": 29929,
+    "test": 30477
+  },
+  "games": {
+    "train": 8400,
+    "validation": 1800,
+    "test": 1800
+  },
+  "hyperparameters": {
+    "hidden_layers": [
+      128
+    ],
+    "learning_rate": 0.001,
+    "alpha": 0.001,
+    "batch_size": 256,
+    "max_epochs": 40,
+    "patience": 4,
+    "seed": 42
+  },
+  "epochs_trained": 10,
+  "best_epoch": 6,
+  "training_seconds": 21.4,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.40374125668202937,
+      "val_loss": 0.4358879625797272
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.30672180269679034,
+      "val_loss": 0.4266602396965027
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.2912720838356589,
+      "val_loss": 0.4240262508392334
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.28518229401494094,
+      "val_loss": 0.42220497131347656
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.28163789844300013,
+      "val_loss": 0.42175424098968506
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.2793404289299771,
+      "val_loss": 0.42119330167770386
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.27764471080454967,
+      "val_loss": 0.42196840047836304
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.2763556889870786,
+      "val_loss": 0.4219227135181427
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.27545326213932525,
+      "val_loss": 0.4231700301170349
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.27472883578239904,
+      "val_loss": 0.4221447706222534
+    }
+  ],
+  "test_metrics": {
+    "roc_auc": 0.7893580265205021,
+    "log_loss": 0.42449942231178284,
+    "brier": 0.14670895040035248,
+    "next_shot_hit_rate": 0.6707353085933655
+  }
+}
