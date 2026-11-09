@@ -1,14 +1,14 @@
-# Battleship AI – Schiffe versenken against a data-driven opponent
+# Battleship AI – play Battleship against a data-driven opponent
 
 [![CI](https://github.com/nicomirsberger/Schiffe_Versenken/actions/workflows/ci.yml/badge.svg)](https://github.com/nicomirsberger/Schiffe_Versenken/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-A desktop Battleship game (German: *Schiffe versenken*) in which you play
-against an AI opponent. The strongest opponent is a **neural network trained on
-simulated games** and combined with a **constraint search** over every
-possible ship placement. The development of the AI follows the
-**CRISP-DM** process model and is documented step by step.
+A desktop Battleship game in which you play against an AI opponent. The
+strongest opponent is a **neural network trained on simulated games** and
+combined with a **constraint search** over every possible ship placement. The
+development of the AI follows the **CRISP-DM** process model and is documented
+step by step.
 
 ![Battle screen with the AI's probability map](docs/screenshots/3_battle_heatmap.png)
 
@@ -33,7 +33,7 @@ expects your ships. Right: the enemy waters you are shooting at.*
 ## Features
 
 - Full Battleship game with a graphical user interface (pygame)
-- Classic German rules: 10×10 board, ten ships (1×5, 2×4, 3×3, 4×2),
+- Classic rules: 10×10 board, ten ships (1×5, 2×4, 3×3, 4×2),
   ships must not touch, a hit earns another shot. All rules are configurable
   in [`battleship/config.py`](battleship/config.py).
 - Four difficulty levels from a random shooter to the neural network with search
@@ -180,7 +180,7 @@ Schiffe_Versenken/
 │   └── ui/                  # pygame interface
 ├── models/                  # trained model
 ├── reports/                 # metrics (JSON/Markdown) and figures
-├── docs/                    # CRISP-DM documentation, quality, screenshots
+├── docs/                    # CRISP-DM and architecture documentation, screenshots
 └── tests/                   # pytest test suite
 ```
 
@@ -230,9 +230,13 @@ GitHub Actions runs linting and tests on Python 3.10 and 3.12 for every push.
 
 - [docs/CRISP-DM.md](docs/CRISP-DM.md) – detailed walkthrough of all six phases and three iterations
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) – modules, interfaces and design decisions
-- [docs/QUALITY.md](docs/QUALITY.md) – how the project addresses software and data science quality criteria
 - [reports/results.md](reports/results.md) – latest evaluation results
+
+## Authors
+
+- Nico Mirsberger
+- Andre Richter
 
 ## License
 
-[MIT](LICENSE) © 2026 Nico Mirsberger
+[MIT](LICENSE) © 2026 Nico Mirsberger & Andre Richter

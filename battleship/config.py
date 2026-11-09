@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-#: Classic German "Schiffe versenken" fleet:
+#: Classic fleet:
 #: 1x battleship (5), 2x cruiser (4), 3x destroyer (3), 4x submarine (2).
 DEFAULT_FLEET: tuple[int, ...] = (5, 4, 4, 3, 3, 3, 2, 2, 2, 2)
 

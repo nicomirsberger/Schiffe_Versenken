@@ -5,11 +5,11 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "battleship-ai"
 version = "1.0.0"
-description = "Battleship (Schiffe versenken) against a data-driven AI opponent, developed along CRISP-DM."
+description = "Battleship against a data-driven AI opponent, developed along CRISP-DM."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-authors = [{ name = "Nico Mirsberger" }]
+authors = [{ name = "Nico Mirsberger" }, { name = "Andre Richter" }]
 dependencies = [
     "numpy>=1.26",
     "pandas>=2.0",
