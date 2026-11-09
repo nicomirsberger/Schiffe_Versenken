@@ -8,7 +8,7 @@ venv/
 build/
 dist/
 # Generated datasets are large and fully reproducible (python -m battleship generate)
-data/
+/data/
 .DS_Store
 .idea/
 .vscode/
